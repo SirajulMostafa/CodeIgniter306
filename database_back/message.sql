@@ -94,7 +94,8 @@ CREATE TABLE IF NOT EXISTS `tbl_user` (
   `password` varchar(100) NOT NULL,
   `level` varchar(100) NOT NULL,
   `status` int(11) NOT NULL,
-  `date_created` datetime NOT NULL
+  `date_created` datetime NOT NULL,
+  `img` varchar(200) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --

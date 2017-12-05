@@ -1285,7 +1285,8 @@ var Lobibox = Lobibox || {};
         }
     };
     //User can set default options to this variable
-    var url = 'http://'+window.location.hostname + '/sdn/sounds/';
+    //var url = 'http://'+window.location.hostname + '/sounds/';
+    var url = 'http://'+window.location.hostname + '/CodeIgniter306/sounds/';
     Lobibox.notify.DEFAULTS = {
         title: true,                // Title of notification. If you do not include the title in options it will automatically takes its value 
         //from Lobibox.notify.OPTIONS object depending of the type of the notifications or set custom string. Set this false to disable title

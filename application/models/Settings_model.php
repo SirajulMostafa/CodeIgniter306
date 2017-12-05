@@ -55,5 +55,19 @@ class Settings_model extends CI_Model {
         $this->db->where('user_id',$id);
         $this->db->update('tbl_user',$data);        
     }
+
+     function update_user_profile_img($update_data){
+        $data = $update_data;
+       // var_export($ab);die();
+        $id = $this->session->userdata('user_id');
+        // $data = array(
+                
+        //         'img' => $this->input->post('id_no')
+        //     );
+        $this->db->where('user_id',$id);
+        $this->db->update('tbl_user',$data);   
+        //update session img field client side
+        $this->session->set_userdata($data);     
+    }
 }
 ?>

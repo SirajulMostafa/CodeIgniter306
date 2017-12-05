@@ -5,7 +5,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title"><i class="fa fa-user"></i> User Info</h4>
             </div>
-            <?php echo form_open('users'); ?>
+            <?php echo form_open_multipart('users'); ?>
             <input type="hidden" name="message_id" class="message_id">
             <div class="modal-body">
                 <table style="font-size:1.2em;" class="table table-striped">
@@ -34,7 +34,7 @@
                         <td class="col-sm-5">Confirm Password</td>
                         <td>:</td>
                         <td class="text-danger"><input type="password" name="tmp_password" class="form-control"></td>
-                    </tr>                    
+                    </tr>             
                 </table>
             </div>
             <div class="modal-footer">

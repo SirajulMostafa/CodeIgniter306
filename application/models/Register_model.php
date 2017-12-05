@@ -29,6 +29,7 @@ class Register_model extends CI_Model {
                 'level' => 'user',
                 'status' => 1,
                 'date_created' => date('Y-m-d G:i:s'),
+                'img' => 'avator.png',
             );
         $q = $this->db->where($data)
                       ->get('tbl_user');

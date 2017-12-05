@@ -23,6 +23,9 @@
             </div><!-- /.box-header -->
             <div class="box-body">
                 <div class="register-box-body col-sm-offset-3 col-sm-6">
+                  <?php if (isset($flash)) { echo $flash;}
+                  //flush does not work in same page
+                   ?>
                     <p class="login-box-msg">Update Profile</p>
                       <div class="alert alert-danger <?php if(!isset($_GET['errors'])) echo 'hide';?>">
                         <strong>Error!</strong>
@@ -30,7 +33,7 @@
                     <?php //echo validation_errors('<div class="alert alert-danger">', '</div>'); ?>
                     <?php echo validation_errors("<script>
         Lobibox.notify('error', { msg:'", "'});</script>"); ?>
-                    <?php echo form_open('settings'); ?>
+                    <?php echo form_open_multipart('settings'); ?>
                     <?php foreach($record as $row): ?>
                       <div class="form-group has-feedback">
                         <input type="text" class="form-control" placeholder="ID No." name="id_no" autocomplete="off" value="<?php echo $row->id_no;?>">
@@ -51,7 +54,8 @@
                       <div class="form-group has-feedback">
                         <input type="password" class="form-control" placeholder="Retype password" name="tmp_password" >
                         <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
-                      </div>
+                      </div> 
+                      
                       <div class="row">
                         <div class="col-xs-offset-8 col-xs-4">
                           <button type="submit" class="btn btn-primary btn-block btn-flat"><i class="fa fa-edit"></i> Update</button>

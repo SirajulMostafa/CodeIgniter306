@@ -12,10 +12,12 @@ class Login_model extends CI_Model {
             foreach($query->result() as $row){
                 $user_id = $row->user_id;   
                 $level = $row->level;
+                $img = $row->img;
             }
             $data = array(
                 'user_id' => $user_id,
                 'level' => $level,
+                'img' => $img,
                 'is_logged_in' => true
             );                                       
             $this->session->set_userdata($data);

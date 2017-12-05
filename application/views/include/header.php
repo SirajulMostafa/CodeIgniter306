@@ -5,6 +5,11 @@
     }
     
 ?>
+<?php
+    $level = $this->session->userdata('level');
+    $img = $this->session->userdata('img');
+    $img_url = base_url('uploads/'.$img);
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -73,19 +78,49 @@
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  
+              <?php 
+                $image_properties = array(
+                    'src'    =>     $img_url,
+                    'alt'    =>     'User Image',
+                    'class'  =>     'user-image',
+                    'width'  =>     '200',
+                    'height' =>     '200',
+                    'title'  =>     'That was quite a night',
+                    'rel'    =>     'lightbox',
+               );
+              
+               echo img($image_properties);
+             ?>  
                   <span class="hidden-xs">Hello, <?php echo $fullname;?> <i class="fa fa-caret-down"></i></span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
-                            
+                  <li class="user-header">
+              <?php 
+              $image_properties = array(
+                  'src'    =>     $img_url,
+                  'alt'    =>     'User Image',
+                  'class'  =>     'img-circle',
+                  'width'  =>     '200',
+                  'height' =>     '200',
+                  'title'  =>     'That was quite a night',
+                  'rel'    =>     'lightbox',
+             );
+              
+             echo img($image_properties);
+             ?>  
+                  </li>
+               
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="<?php echo base_url(); ?>settings" class="btn btn-primary btn-flat"><i class="fa fa-gear"></i> Settings</a>
+                      <a href="<?php echo base_url(); ?>settings" class="btn btn-primary btn-flat btn-sm"><i class="fa fa-gear"></i>setting</a>
                     </div>
-                    <div class="pull-right">
-                      <a href="<?php echo base_url(); ?>dashboard/logout" class="btn btn-warning btn-flat"><i class="fa fa-sign-out"></i> Sign out</a>
+                    <div class="pull-left">
+                      <a href="<?php echo base_url(); ?>settings/image_upload" class="btn btn-info btn-flat btn-sm"><i class="fa fa-user"></i> picture</a>
+                    </div>
+                    <div class="pull-left">
+                      <a href="<?php echo base_url(); ?>dashboard/logout" class="btn btn-warning btn-flat btn-sm"><i class="fa fa-sign-out"></i> Sign out</a>
                     </div>
                   </li>
                 </ul>

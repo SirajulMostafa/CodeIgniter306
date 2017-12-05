@@ -1,11 +1,27 @@
 <?php
-    $level = $this->session->userdata('level');
+    // $level = $this->session->userdata('level');
+    // $img = $this->session->userdata('img');
+    // $img_url = base_url('uploads/'.$img);
+//this three line add header page
 ?>
 <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
         <div class="user-panel">
             <div class="pull-left image">
-              <img src="<?php echo base_url(); ?>img/message-logo.png" class="img-circle" alt="User Image">
+         <?php 
+              $image_properties = array(
+                  'src'    =>     $img_url,
+                  'alt'    =>     'User Image',
+                  'class'  =>     'img-circle',
+                  'width'  =>     '200',
+                  'height' =>     '200',
+                  'title'  =>     'That was quite a night',
+                  'rel'    =>     'lightbox',
+             );
+              
+             echo img($image_properties);
+             ?>
+  
             </div>
             <div class="pull-left info">
               <p><?php echo $fullname; ?></p>
@@ -18,8 +34,8 @@
                 
             </center>
             <br>
-            <button style="background-color: #fff" type="button" class="btn btn-default  btn-lg  col-sm-12 " data-target="#compose_mail" data-toggle="modal">Compose</button>
-            
+              <button style="background-color: #fff" type="button" class="btn btn-default  btn-lg  col-sm-12 " data-target="#compose_mail" data-toggle="modal">Compose</button>    
+                   <!-- fired/load modal/compose.php -->
 
             <div class="clearfix" style=" padding-top: 20px; padding-bottom: 20px;"></div>
           <ul class="sidebar-menu">

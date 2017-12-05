@@ -131,6 +131,9 @@
 </div><!-- /.content-wrapper -->
 <?php $this->load->view('modal/read'); ?>
 <?php $this->load->view('modal/search'); ?>
+<!-- inlude extra message script  -->
+<!-- then function call/load the all model page -->
+<!-- if we click then id/class will fired -->
 <?php $this->load->view('script/message'); ?>
 <?php if(isset($_GET['send'])): ?>
     <script>

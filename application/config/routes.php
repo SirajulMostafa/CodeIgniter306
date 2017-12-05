@@ -54,6 +54,7 @@ $route['default_controller'] = 'dashboard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['login'] = 'login/index';
+//$route['setting/imageupload'] = 'settings/image_upload';
 
 //$route['(:any)'] = 'pages/view/$1';
 /*

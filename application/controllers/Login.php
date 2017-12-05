@@ -25,7 +25,8 @@ class Login extends CI_Controller {
 		}
 		else
 		{
-			$this->load->model('Login_model');
+
+			//$this->load->model('Login_model');//this is not required already cal  at the top
             $verify = $this->Login_model->verify();
             if($verify){                                
                 redirect('dashboard');
